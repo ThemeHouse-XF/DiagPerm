@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ThemeHouse_DiagPerm" title="[⌂] Diagnostics Permission" version_string="1.0.0" version_id="1447261019" url="http://xf.themehouse.io/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions>
+    <admin_permission admin_permission_id="runDiagnostics" display_order="425"/>
+  </admin_permissions>
+  <admin_style_properties/>
+  <admin_templates>
+    <template title="th_tools_splash_facebook_remove_diagperm"><![CDATA[	<!-- slot: pre_facebook_test -->
+
+	<li><a href="{xen:adminlink 'tools/test-facebook'}" class="facebook_test">
+		<span class="icon"><span></span></span>
+		<span class="linkText">{xen:phrase test_facebook_integration}</span>
+		</a></li>]]></template>
+  </admin_templates>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="load_class_controller" execute_order="10" callback_class="ThemeHouse_DiagPerm_Listener_LoadClassController" callback_method="loadClassController" active="1" hint="" description=""/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="ThemeHouse_DiagPerm_Listener_LoadClassModel" callback_method="loadClassModel" active="1" hint="" description=""/>
+    <listener event_id="template_hook" execute_order="10" callback_class="ThemeHouse_DiagPerm_Listener_TemplateHook" callback_method="templateHook" active="1" hint="" description=""/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="admin_permission_runDiagnostics" version_id="1347303920" version_string="1.0.0"><![CDATA[Run diagnostics]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications>
+    <modification template="footer" modification_key="th_copyrightNotice_diagPerm" description="Copyright notice for [⌂] Diagnostics Permission" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
